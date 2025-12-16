@@ -91,8 +91,7 @@ TOKEN = load_token()
 bot = telebot.TeleBot(TOKEN, parse_mode='HTML')
 
 class Config:
-    VERSION = "2.0"
-    AUTHOR = "Telegram Privacy Auditor"
+    AUTHOR = "Конфидент"
     
     QUESTIONS = [
         {
@@ -438,7 +437,6 @@ def handle_version(message: types.Message):
     version_text = f"""
 <b>ℹ️ ИНФОРМАЦИЯ О БОТЕ:</b>
 • Название: {Config.AUTHOR}
-• Версия: {Config.VERSION}
 
 <b>🔒 БЕЗОПАСНОСТЬ:</b>
 • Токен защищен: {'✅' if 'config.py' not in sys.modules else '⚠️'}
@@ -500,4 +498,5 @@ if __name__ == "__main__":
     except Exception as e:
         logger.error(f"Критическая ошибка: {e}")
         print(f"\n❌ Ошибка: {e}")
+
         print("Проверьте токен и интернет соединение")
